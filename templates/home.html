@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% extends "main.html" %} {% block content %} {% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parking-Management</title>
+  <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+</head>
+<body>
+  <div class="page1">
+    <div class="heading">
+      <h1>BOOK YOUR PARKING SPACE NOW</h1>
+    </div>
+
+    <div class="para">
+      <p>
+        we provide the facility to make the parking space available for your
+        vehicle!
+      </p>
+    </div>
+
+    <a href="/book.html">
+      <button class="btn">BOOK NOW</button>
+    </a>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<!-- <script>
+    const func = async ()=>{
+       let res = await fetch('localhost:5000/all')
+           res = await res.json()
+           console.log("aryan",res)
+
+    }
+    document.addEventListener("load",func)
+ 
+   </script>  -->
+{% endblock content %}
