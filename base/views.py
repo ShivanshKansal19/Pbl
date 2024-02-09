@@ -7,5 +7,6 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'home.html')
 
+
 def location(request):
-    return HttpResponse("Parking map")
+    return render(request, 'location.html')

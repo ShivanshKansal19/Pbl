@@ -1,3 +1,50 @@
 {% extends "main.html" %} {% block content %}
-<h1>Parking map</h1>
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href={% static "styles/book.css" %} />
+</head>
+<body>
+  <h1><u>CHOOSE YOUR LOCATION !</u></h1>
+  <main class="page-content">
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Pentagon Mall</h2>
+        <p class="copy">Haridwar</p>
+        <a href="/Main.html">
+          <button class="btn">Book Now</button>
+        </a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">RR cinema</h2>
+        <p class="copy">Roorkee</p>
+        <a href="/Main.html">
+          <button class="btn">Book Now</button>
+        </a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Silver City</h2>
+        <p class="copy">Dehradun</p>
+        <a href="/main2.html">
+          <button class="btn">Book Now</button>
+        </a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Neelam Cinema</h2>
+        <p class="copy">Roorkee</p>
+        <a href="main2.html">
+          <button class="btn">Book Now</button>
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
 {% endblock content %}
