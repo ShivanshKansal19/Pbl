@@ -1,0 +1,69 @@
+{% extends "main.html" %} {% block content %}
+
+<head>
+  {% load static %}
+  {% load widget_tweaks %}
+  <meta charset="utf-8" />
+  <title>Login Form Design | CodeLab</title>
+  <link rel="stylesheet" href={% static "styles/form.css" %} />
+</head>
+
+<div class="wrapper">
+  {% if page == 'login' %}
+  <div class="title">Login Form</div>
+  <form method="POST" action="">
+    {% csrf_token %}
+    <div class="field">
+      <input name="username" type="text" required />
+      <label>Username</label>
+    </div>
+    <div class="field">
+      <input name="password" type="password" required />
+      <label>Password</label>
+    </div>
+    <div class="content">
+      <div class="checkbox">
+        <input type="checkbox" id="remember-me" />
+        <label for="remember-me">Remember me</label>
+      </div>
+      <div class="pass-link">
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
+    <div class="field">
+      <input type="submit" value="Login" />
+    </div>
+    <div class="signup-link">
+      Not a member? <a href={% url "signup" %}>Signup now</a>
+    </div>
+    {% else %}
+    <div class="title">SignUp Form</div>
+    <form method="POST" action="">
+      {% csrf_token %}
+
+        {% for field in form %}
+        <div class="field">
+            {% if field.label != 'Username' %}
+            {% render_field field type="password" %}
+            {% else %}
+            {{field}}
+            {% endif %}
+            <label>{{field.label}}</label>
+        </div>
+        {% endfor %}
+        <div class="field">
+            {{ form.errors }}
+            {{ form.non_field_errors }}
+        </div>
+        <div class="field">
+            <input type="submit" value="Login" />
+        </div>
+
+    <div class="signup-link">
+      Already a member? <a href={% url "login" %}>Login now</a>
+    </div>
+    {% endif %}
+  </form>
+</div>
+
+{% endblock content %}
