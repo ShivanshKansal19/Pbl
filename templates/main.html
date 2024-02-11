@@ -10,15 +10,7 @@
     <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
   </head>
   <body>
-    {% include "navbar.html" %} {% if messages %}
-    <ul class="messages">
-      {% for message in messages %}
-      <li {% if messages.tags %} class="{{messages.tags}}" {% endif %}>
-        {{message}}
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %} {% block content %}{% endblock content %}
+    {% include "navbar.html" %} {% block content %}{% endblock content %}
     <script src="" async defer></script>
   </body>
 </html>
