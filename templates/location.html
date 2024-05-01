@@ -4,7 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href={% static "styles/book.css" %} />
+  <link rel="stylesheet" href="{% static "styles/book.css" %}" />
+  <style>
+    body {
+      background-color: black; /* Set background color to black */
+      color: white; /* Set text color to white */
+    }
+
+    .card {
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.7
+      ); /* Set card background color to black with opacity */
+      padding: 20px; /* Add padding for better readability */
+      transition: transform 0.3s ease; /* Add transition effect */
+      position: relative; /* Set position to relative for absolute positioning */
+    }
+
+    .btn {
+      background-color: black; /* Set button background color to black */
+      color: white; /* Set button text color to white */
+      position: absolute; /* Set position to absolute */
+      top: 50%; /* Position vertically centered */
+      right: 50%; /* Position horizontally centered */
+      transform: translate(
+        50%,
+        -50%
+      ); /* Center both vertically and horizontally */
+    }
+
+    .card:hover .btn {
+      display: block; /* Show button when card is hovered over */
+    }
+
+    .card:hover {
+      transform: translateY(-10px); /* Move the card up a bit on hover */
+    }
+  </style>
 </head>
 <body>
   <h1><u>CHOOSE YOUR LOCATION !</u></h1>
@@ -13,7 +51,7 @@
       <div class="content">
         <h2 class="title">Pentagon Mall</h2>
         <p class="copy">Haridwar</p>
-        <a href="/Main.html">
+        <a href="{% url 'Book1' %}">
           <button class="btn">Book Now</button>
         </a>
       </div>
@@ -22,7 +60,7 @@
       <div class="content">
         <h2 class="title">RR cinema</h2>
         <p class="copy">Roorkee</p>
-        <a href="/Main.html">
+        <a href="{% url 'Book1' %}">
           <button class="btn">Book Now</button>
         </a>
       </div>
@@ -31,7 +69,7 @@
       <div class="content">
         <h2 class="title">Silver City</h2>
         <p class="copy">Dehradun</p>
-        <a href="/main2.html">
+        <a href="{% url 'Book1' %}">
           <button class="btn">Book Now</button>
         </a>
       </div>
@@ -40,7 +78,7 @@
       <div class="content">
         <h2 class="title">Neelam Cinema</h2>
         <p class="copy">Roorkee</p>
-        <a href="main2.html">
+        <a href="{% url 'Book1' %}">
           <button class="btn">Book Now</button>
         </a>
       </div>
